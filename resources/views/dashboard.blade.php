@@ -109,6 +109,12 @@ navbar-light">
                                 <p> Pegawai</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ url('proyek') }}" class="nav-link">
+                                <i class="nav-icon far fa-circle"></i>
+                                <p> Proyek</p>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

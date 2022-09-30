@@ -26,5 +26,10 @@ class Departemen extends Model
         return $this->hasMany(Pegawai::class,'id_departemen','id');
     }
 
+    public function proyeks()
+    {
+        return $this->hasMany(Proyek::class,'id_departemen','id');
+    }
+
 
 }
