@@ -1,5 +1,14 @@
 @extends('dashboard')
 @section('content')
+<script>
+@if(Session::has('success'))
+toastr.options = {
+    "closeButton": true,
+    "progressBar": true
+}
+toastr.success("{{ session('success') }}");
+@endif
+</script>
 <div class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
@@ -30,6 +39,8 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
+                        <a href="{{ route('pegawai.create') }}" class="btn btn-md btn-success mb-3">TAMBAH
+                            PEGAWAI</a>
                         <div class="table-responsive p-0">
                             <table class="table table-hover text-nowrap">
                                 <thead>
@@ -42,6 +53,7 @@
                                         <th class="text-center">Gender</th>
                                         <th class="text-center">Gaji Pokok</th>
                                         <th class="text-center">Status</th>
+                                        <th class="text-center">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -55,6 +67,17 @@
                                         <td class="text-center">{{ $item->gender ? "Pria":"Wanita" }}</td>
                                         <td class="text-center">Rp. {{ number_format($item->gaji_pokok,2) }}</td>
                                         <td class="text-center">{{ $item->status ? "Aktif":"Tidak AKtif" }}</td>
+                                        <td class="text-center">
+                                            <form action="{{ route('pegawai.destroy', $item->id) }}" method="POST">
+                                                <a href="{{ route('pegawai.edit', $item->id) }}"
+                                                    class="btn btn-sm btn-primary">EDIT</a>
+
+                                                @csrf
+                                                @method('DELETE')
+                                                <button onclick="return confirm('Apakah anda yakin?');" type="submit"
+                                                    class="btn btn-sm btn-danger">Hapus</button>
+                                            </form>
+                                        </td>
 
                                     </tr>
                                     @empty
