@@ -29,7 +29,7 @@ class ProyekController extends Controller
         $request->validate([
             'nama_proyek' => 'required',
             'waktu_mulai' => 'required|date',
-            'waktu_selesai' => 'date|after:waktu_mulai',
+            'waktu_selesai' => 'required|date|after:waktu_mulai',
             'nilai_proyek' => 'required|numeric|gt:10000000'
             ]);
 
@@ -67,7 +67,7 @@ class ProyekController extends Controller
         $request->validate([
             'nama_proyek' => 'required',
             'waktu_mulai' => 'required|date',
-            'waktu_selesai' => 'date|after:waktu_mulai',
+            'waktu_selesai' => 'required|date|after:waktu_mulai',
             'nilai_proyek' => 'required|numeric|gt:10000000'
             ]);
 
