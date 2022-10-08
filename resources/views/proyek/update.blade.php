@@ -101,10 +101,10 @@
 
                                         @if($data->status == 1)
                                         <option selected>Berjalan</option>
-                                        <option>Tidak Berjalan</option>
+                                        <option>Selesai</option>
                                         @else
                                         <option>Berjalan</option>
-                                        <option selected>Tidak Berjalan</option>
+                                        <option selected>Selesai</option>
                                         @endif
                                     </select>
                                 </div>

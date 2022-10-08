@@ -94,7 +94,7 @@
                                     <select name="status" class="form-select" id="status" required>
 
                                         <option selected>Berjalan</option>
-                                        <option>Tidak Berjalan</option>
+                                        <option>Selesai</option>
 
                                     </select>
                                 </div>
