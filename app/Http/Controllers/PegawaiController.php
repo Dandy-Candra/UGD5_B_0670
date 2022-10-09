@@ -28,8 +28,8 @@ class PegawaiController extends Controller
         
 
         $request->validate([
-            'nomor_induk_pegawai' => 'required | string | max:15',
-            'nama_pegawai' => 'required',
+            'nomor_induk_pegawai' => 'required',
+            'nama_pegawai' => 'required | string | max:15',
             'email' => 'required|email',
             'telepon' => 'required|regex:/^(0)8[1-9][0-9]{3,4}$/',
             'gaji_pokok' => 'required|numeric|gt:2000000'
@@ -79,8 +79,8 @@ class PegawaiController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nomor_induk_pegawai' => 'required | string | max:15',
-            'nama_pegawai' => 'required',
+            'nomor_induk_pegawai' => 'required',
+            'nama_pegawai' => 'required  | string | max:15',
             'email' => 'required|email',
             'telepon' => 'required|regex:/^(0)8[1-9][0-9]{3,4}$/',
             'gaji_pokok' => 'required|numeric|gt:2000000'
