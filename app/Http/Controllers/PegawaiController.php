@@ -26,6 +26,7 @@ class PegawaiController extends Controller
     public function store(Request $request){
 
         
+        
 
         $request->validate([
             'nomor_induk_pegawai' => 'required',
